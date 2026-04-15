@@ -1,30 +1,33 @@
 # Main game
 import random
 import tkinter as tk
+from player import Player
 
-
-class Minesweeper:
+class KRsweeper:
 
     def __init__(self, root):
-
         self.root = root
         self.root.title("KRsweeper")
+        self._player = None  # dar nežinome vardo
 
         self.n = 0
         self.m = 0
-        self.grid = []
-        self.visible = []
-        self.flags = []
+        self._grid = []
+        self._visible = []
+        self._flags = []
         self.buttons = []
-        self.zaidziama = True
+        self._zaidziama = True
 
         self.start_frame = tk.Frame(root)
         self.start_frame.pack()
-
         self.game_frame = tk.Frame(root)
 
         self.status_label = tk.Label(root, text="", font=("Arial", 14))
         self.status_label.pack(pady=10)
+
+        tk.Label(self.start_frame, text="Vardas").pack()      # ← čia
+        self.entry_name = tk.Entry(self.start_frame)
+        self.entry_name.pack()
 
         tk.Label(self.start_frame, text="Eilutės").pack()
         self.entry_rows = tk.Entry(self.start_frame)
@@ -41,7 +44,8 @@ class Minesweeper:
         tk.Button(self.start_frame, text="Pradėti", command=self.pradeti).pack()
 
     def pradeti(self):
-
+        name = self.entry_name.get()
+        self._player = Player(name)
         self.n = int(self.entry_rows.get())
         self.m = int(self.entry_cols.get())
         bombu_kiekis = int(self.entry_bombs.get())
@@ -49,20 +53,20 @@ class Minesweeper:
         self.start_frame.pack_forget()
         self.game_frame.pack()
 
-        self.grid = [[0 for _ in range(self.m)] for _ in range(self.n)]
-        self.visible = [[None for _ in range(self.m)] for _ in range(self.n)]
-        self.flags = [[False for _ in range(self.m)] for _ in range(self.n)]
+        self._grid = [[0 for _ in range(self.m)] for _ in range(self.n)]
+        self._visible = [[None for _ in range(self.m)] for _ in range(self.n)]
+        self._flags = [[False for _ in range(self.m)] for _ in range(self.n)]
 
         for _ in range(bombu_kiekis):
 
             x = random.randint(0, self.n - 1)
             y = random.randint(0, self.m - 1)
 
-            while self.grid[x][y] == -1:
+            while self._grid[x][y] == -1:
                 x = random.randint(0, self.n - 1)
                 y = random.randint(0, self.m - 1)
 
-            self.grid[x][y] = -1
+            self._grid[x][y] = -1
 
         self.buttons = []
 
@@ -101,7 +105,7 @@ class Minesweeper:
                 ny = y + dy
 
                 if 0 <= nx < self.n and 0 <= ny < self.m:
-                    if self.grid[nx][ny] == -1:
+                    if self._grid[nx][ny] == -1:
                         count += 1
 
         return count
@@ -111,15 +115,15 @@ class Minesweeper:
         if x < 0 or x >= self.n or y < 0 or y >= self.m:
             return
 
-        if self.visible[x][y] != None:
+        if self._visible[x][y] != None:
             return
 
-        if self.grid[x][y] == -1:
+        if self._grid[x][y] == -1:
             return
 
         count = self.tikrint_kaimynus(x, y)
 
-        self.visible[x][y] = " " if count == 0 else count
+        self._visible[x][y] = " " if count == 0 else count
 
         if count == 0:
 
@@ -136,25 +140,26 @@ class Minesweeper:
         for i in range(self.n):
             for j in range(self.m):
 
-                if self.visible[i][j] != None:
+                if self._visible[i][j] != None:
                     self.buttons[i][j].config(
-                        text=self.visible[i][j],
+                        text=self._visible[i][j],
                         bg="white"
                     )
 
     def paspausta(self, x, y):
 
-        if not self.zaidziama:
+        if not self._zaidziama:
             return
 
-        if self.flags[x][y]:
+        if self._flags[x][y]:
             return
 
-        if self.grid[x][y] == -1:
+        if self._grid[x][y] == -1:
 
             self.buttons[x][y].config(text="💣")
             self.status_label.config(text="Loser", fg="red")
-            self.zaidziama = False
+            self._player.die()
+            self._zaidziama = False
             return
 
         self.atidengti(x, y)
@@ -162,37 +167,38 @@ class Minesweeper:
 
         if self.laimejimas():
             self.status_label.config(text="WINNER", fg="green")
-            self.zaidziama = False
+            self._zaidziama = False
 
     def paflagginta(self, x, y):
 
-        if self.visible[x][y] != None:
+        if self._visible[x][y] != None:
             return
 
-        self.flags[x][y] = not self.flags[x][y]
+        self._flags[x][y] = not self._flags[x][y]
 
-        if self.flags[x][y]:
+        if self._flags[x][y]:
             self.buttons[x][y].config(text="🚩")
         else:
             self.buttons[x][y].config(text="")
 
         if self.laimejimas():
             self.status_label.config(text="WINNER", fg="green")
-            self.zaidziama = False
+            self._zaidziama = False
 
     def laimejimas(self):
 
         for i in range(self.n):
             for j in range(self.m):
 
-                if self.grid[i][j] == -1 and not self.flags[i][j]:
+                if self._grid[i][j] == -1 and not self._flags[i][j]:
                     return False
 
-                if self.grid[i][j] != -1 and self.flags[i][j]:
+                if self._grid[i][j] != -1 and self._flags[i][j]:
                     return False
 
         return True
 
+
 root = tk.Tk()
-game = Minesweeper(root)
+game = KRsweeper(root)
 root.mainloop()
