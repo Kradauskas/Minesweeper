@@ -1,0 +1,5 @@
+.vs/
+build/
+dist/
+*.pyc
+__pycache__/
