@@ -1,13 +1,15 @@
-# Minesweeper
-OOP 2026 coursework: Minesweeper with AI solver.
+# KRsweeper 💣
 
-Overall timeline:
+OOP 2026 coursework project — Minesweeper game with a planned AI solver, 
+built in Python using Tkinter.
 
-February 10 - 15: Made the initial Minesweeper logic without any classes and stuff
+## Timeline
+- **Feb 10–15** — Initial Minesweeper logic (no classes)
+- **Feb 15–17** — Simple UI with Tkinter
+- **Mar 10–13** — Rewrote logic into a single class
+- **Apr 15** — Refactoring into multiple classes (OOP pillars: Polymorphism, Abstraction, Inheritance, Encapsulation)
 
-February 15 - 17: Implemented simple UI using Tkinter (Python interface to Tcl/Tk)
-
-March 10 - 13: Rewrote the initial logic to a single class
-
-April 15: Implementing different classes in order to have 4 OOP pillars (Polymorphism, Abstraction, Inheritence, Encapsulation), and pushing the original logic to github.
-
+## Planned features
+- AI solver
+- Difficulty presets (Easy / Medium / Hard)
+- Timer & scoreboard
