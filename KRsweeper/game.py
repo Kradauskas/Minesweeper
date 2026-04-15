@@ -1,3 +1,4 @@
+# Main game
 import random
 import tkinter as tk
 
@@ -191,7 +192,6 @@ class Minesweeper:
                     return False
 
         return True
-
 
 root = tk.Tk()
 game = Minesweeper(root)
