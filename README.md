@@ -15,4 +15,4 @@ built in Python using Tkinter.
 ## Planned features
 - AI solver
 - Difficulty presets (Easy / Medium / Hard)
-- Timer & scoreboard
+- T̶i̶m̶e̶r̶ & scoreboard
