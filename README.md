@@ -3,6 +3,8 @@
 OOP 2026 coursework project — Minesweeper game with a planned AI solver, 
 built in Python using Tkinter.
 
+ⓘ *AI was used in this project. Generation Then Comprehension strategy.*
+
 ## Timeline
 - **Feb 10–15** — Initial Minesweeper logic (no classes)
 - **Feb 15–17** — Simple UI with Tkinter
