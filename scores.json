@@ -1,6 +1,12 @@
 {
-    "KR": {
-        "password": "1234",
-        "best_score": 3.9631831645965576
+    "Easy": {
+        "KR": {
+            "password": "1234",
+            "best_score": 4.302474737167358
+        },
+        "Kr": {
+            "password": "1234",
+            "best_score": 7.386627435684204
+        }
     }
 }
