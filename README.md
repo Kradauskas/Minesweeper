@@ -20,7 +20,7 @@ wouldn't have their score overwritten (**DO NOT USE REAL PASSWORDS, THEY ARE SAV
 - **Apr 18** - Added all planned features (the game needs UI polishing, retry button upon failing, various bug fixed, etc.)
 - **Apr 19** - Game is pretty much done. I am happy how it turned out.
   
-## ~~Planned features (DONE)~~
+## ~~Planned features~~ (DONE)
 ~~- AI solver~~
 
 ~~- Difficulty presets (Easy / Medium / Hard)~~
