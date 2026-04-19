@@ -20,7 +20,62 @@ wouldn't have their score overwritten (**DO NOT USE REAL PASSWORDS, THEY ARE SAV
 - **Apr 18** - Added all planned features (the game needs UI polishing, retry button upon failing, various bug fixed, etc.)
 - **Apr 19** - Game is pretty much done. I am happy how it turned out.
   
-## Planned features (DONE)
-- AI solver
-- Difficulty presets (Easy / Medium / Hard)
-- T̶i̶m̶e̶r̶ & scoreboard
+~~## Planned features (DONE)~~
+~~- AI solver~~
+~~- Difficulty presets (Easy / Medium / Hard)~~
+~~- Timer & scoreboard~~
+
+## How to run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Kradauskas/KRsweeper.git
+```
+
+### 2. Navigate into the project folder
+
+```bash
+cd KRsweeper
+```
+
+### 3. (Optional) Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+* **Windows (PowerShell):**
+
+  ```bash
+  venv\Scripts\activate
+  ```
+* **Mac/Linux:**
+
+  ```bash
+  source venv/bin/activate
+  ```
+
+### 4. Install dependencies (if any)
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Run the game
+
+```bash
+python main.py
+```
+
+---
+
+### Notes
+
+* Make sure you have Python installed (recommended 3.10+).
+* If `python` doesn’t work, try `python3`.
+* If there is no `requirements.txt`, you can skip step 4.
+
+
