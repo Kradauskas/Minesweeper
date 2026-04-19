@@ -22,7 +22,9 @@ wouldn't have their score overwritten (**DO NOT USE REAL PASSWORDS, THEY ARE SAV
   
 ## ~~Planned features (DONE)~~
 ~~- AI solver~~
+
 ~~- Difficulty presets (Easy / Medium / Hard)~~
+
 ~~- Timer & scoreboard~~
 
 ## How to run
