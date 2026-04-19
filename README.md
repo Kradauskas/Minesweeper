@@ -24,11 +24,11 @@ built in Python using Tkinter.
 - **Apr 19** - Game is pretty much done. I am happy how it turned out.
   
 ## ~~Planned features~~ (DONE)
-~~- AI solver~~
+- ~~AI solver~~
 
-~~- Difficulty presets (Easy / Medium / Hard)~~
+- ~~Difficulty presets (Easy / Medium / Hard)~~
 
-~~- Timer & scoreboard~~
+- ~~Timer & scoreboard~~
 
 ## How to run
 
