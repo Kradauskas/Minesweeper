@@ -58,13 +58,7 @@ Activate it:
   source venv/bin/activate
   ```
 
-### 4. Install dependencies (if any)
-
-```bash
-pip install -r requirements.txt
-```
-
-### 5. Run the game
+### 4. Run the game
 
 ```bash
 python main.py
@@ -76,6 +70,5 @@ python main.py
 
 * Make sure you have Python installed (recommended 3.10+).
 * If `python` doesn’t work, try `python3`.
-* If there is no `requirements.txt`, you can skip step 4.
 
 
