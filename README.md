@@ -5,6 +5,11 @@ built in Python using Tkinter.
 
 ⓘ *AI was used in this project. Generation Then Comprehension strategy.*
 
+## KNOWN LIMITATIONS:
+- AI can still hit a mine
+- scores.json could get corrupted if the app crashed mid-write.
+- Password is stored in plaintext
+
 ## Timeline
 - **Feb 10–15** — Initial Minesweeper logic (no classes)
 - **Feb 15–17** — Simple UI with Tkinter
