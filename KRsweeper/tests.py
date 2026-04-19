@@ -54,7 +54,6 @@ class TestPlayer(unittest.TestCase):
 class TestScoring(unittest.TestCase):
 
     def setUp(self):
-        # Use a temp file so tests don't touch real scores.json
         self.tmp = tempfile.NamedTemporaryFile(
             suffix=".json", delete=False, mode="w"
         )
@@ -194,8 +193,6 @@ class TestSolver(unittest.TestCase):
         self.assertFalse(self.flags[x][y])
 
     def test_best_move_is_lowest_probability(self):
-        # best_move should return the cell with the minimum probability,
-        # not necessarily the actual safe cell (solver doesn't know ground truth)
         probs = self.solver.calculate_probabilities(
             self.n, self.m, self.grid, self.visible, self.flags
         )
@@ -218,11 +215,6 @@ class TestSolver(unittest.TestCase):
             self.n, self.m, self.grid, visible, self.flags
         )
         self.assertIsNone(move)
-
-
-# ---------------------------------------------------------------------------
-# Factory tests
-# ---------------------------------------------------------------------------
 
 class TestFactory(unittest.TestCase):
 
