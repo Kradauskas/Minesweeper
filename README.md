@@ -26,7 +26,8 @@ cd KRsweeper
 python main.py
 ```
 
-> Requires Python 3.10+. If `python` doesn't work, try `python3`.  
+> Requires Python 3.10+. If `python` doesn't work, try `python3`.
+
 > Optionally create a virtual environment first: `python -m venv venv` then activate it.
 
 ### How to use the program
