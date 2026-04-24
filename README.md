@@ -157,23 +157,20 @@ def _save(self, data):
 
 ### Testing
 
-Core functionality is covered with `unittest`. Tests are grouped by class: `TestPlayer`, `TestScoring`, `TestSolver`, `TestFactory`.
+Core functionality is covered with `unittest`. Tests are split across four files, one per class: `test_player.py`, `test_scoring.py`, `test_solver.py`, `test_factory.py`.
+
+Run all tests from the `KRsweeper` directory:
 
 ```bash
-python -m unittest tests.py
+cd KRsweeper
+python -m unittest discover -v
 ```
 
-Example test:
+Or run a specific file:
 
-```python
-def test_die_and_reset(self):
-    self.player.die()
-    self.assertEqual(self.player.get_status(), "Dead")
-    self.player.reset()
-    self.assertEqual(self.player.get_status(), "Alive")
+```bash
+python -m unittest test_player -v
 ```
-
----
 
 ## 3. Results and Summary
 
